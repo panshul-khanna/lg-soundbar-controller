@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# This app's saved config (contains your local network IP)
+.lg_soundbar_controller.json
+
+# Editor cruft
+.vscode/
+.idea/
+*.swp

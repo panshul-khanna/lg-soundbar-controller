@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.local.lgsoundbar.menubar</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Library/Frameworks/Python.framework/Versions/3.12/bin/python3</string>
+        <!-- Replace this with the FULL path to menubar_app.py on your Mac -->
+        <string>/Users/YOUR_USERNAME/path/to/lg-soundbar-controller/menubar_app.py</string>
+        <!-- Your soundbar's IP passing it here means launchd doesn't depend on a saved config file existing already -->
+        <string>192.168.x.xxx</string>
+    </array>
+
+    <!-- Start automatically whenever you log in -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- If it ever crashes, launchd restarts it -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- So the working directory is right (for reading/writing the saved IP config) -->
+    <key>WorkingDirectory</key>
+    <string>/Users/YOUR_USERNAME/path/to/lg-soundbar-controller</string>
+
+    <!-- Logs, in case something goes wrong -->
+    <key>StandardOutPath</key>
+    <string>/tmp/lgsoundbar-menubar.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/lgsoundbar-menubar.err</string>
+</dict>
+</plist>
